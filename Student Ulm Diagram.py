@@ -23,23 +23,28 @@ class Person:
     
 class Student(Person):
     
-    def __init__(self, school, grade, subjects_studied, credits):
-        super().__init__()
+    def __init__(self, name, age, gender, nationality, school, grade, subjects_studied, credits):
+        super().__init__(name, age, gender, nationality)
         self.school = school
         self.grade = grade
         self.subjects_studied = subjects_studied
         self.credits = credits
-        print(f"{self.__Person__.__name__} studies at {self.school} in the {self.grade} grade.")
+        print(f"{self.name} studies at {self.school} in the {self.grade} grade.")
 
     def study(self):
-        return f"{self.__Person__.__name__} is busy not getting bitches."
-    
+        print(f"{self.name} is very busy at {self.school}")
+        return f"{self.name} is busy not getting bitches."
+            
     def complain(self):
-        return f"{self.__Person__.__name__} is complaining about {self.school}"
+        return f"{self.name} is complaining about {self.school}"
 
 #    def passExam(self, credits)
 
     def failExam(self):
-        return f"{self.__Person__.__name__} failed his exam."
+        return f"{self.name} failed his exam."
 
-    
+john = Person("John", '20', "male", "Jamaican")
+john.speak()
+john.eat()
+billy = Student("Billy", '19', "female", "dutch","Fontys", '2', "mechanical", '110')
+billy.study()
