@@ -48,3 +48,7 @@ john.speak()
 john.eat()
 billy = Student("Billy", '19', "female", "dutch","Fontys", '2', "mechanical", '110')
 billy.study()
+
+
+
+#just testing how to commit
