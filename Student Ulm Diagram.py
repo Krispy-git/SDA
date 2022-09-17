@@ -29,6 +29,7 @@ class Student(Person):
         self.grade = grade
         self.subjects_studied = subjects_studied
         self.credits = credits
+        credits= int
         print(f"{self.name} studies at {self.school} in the {self.grade} grade.")
 
     def study(self):
@@ -38,17 +39,43 @@ class Student(Person):
     def complain(self):
         return f"{self.name} is complaining about {self.school}"
 
-#    def passExam(self, credits)
+    def passExam(self):
+        print(f"{self.name} has passed his {self.subjects_studied} exam and has earned 4 more credits!")
+    
+
 
     def failExam(self):
         return f"{self.name} failed his exam."
+
+#just testing how to commit
+
+class Teacher(Person):
+    def __init__(self, name, age, gender, nationality, school, subjects_taught,hours_worked,classes_taought):
+        super().__init__(name, age, gender, nationality)
+        self.school = school
+        self.subjects_taught = subjects_taught
+        self.hours_worked = hours_worked
+        self.classes_taught = classes_taought
+        print("A teacher is now employed")
+
+    def teach(self):
+        print(f"{self.name} is now giving a lecture about {self.subjects_taught}!") 
+
+    def makeExam(self):
+        print(f"{self.name} is now making a very hard {self.subjects_taught} exam to give to his {self.classes_taught}.")
+        return f"He already knows that 75% will fail"    
+
+    def shout(self): 
+        print("@#!*& @& #*&@!")      
+        return f"{self.name} is angry"     
+             
 
 john = Person("John", '20', "male", "Jamaican")
 john.speak()
 john.eat()
 billy = Student("Billy", '19', "female", "dutch","Fontys", '2', "mechanical", '110')
 billy.study()
-
-
-
-#just testing how to commit
+gosho=Teacher('Gosho','42', 'male','Serbian','fontys','programming','16hours a week','2 international classes')
+print(gosho.speak())
+gosho.shout()
+billy.passExam()
